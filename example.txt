@@ -1,0 +1,72 @@
+Example 1
+
+This is some text to test how regular expressions work. But 74i5 isn't.
+john.doe@example.com is one email address.
+Here's another: jane.doe@example.net
+Type in the characters is into the “Regular Expression” area.
+sarah.connor@fake.org
+More random text.
+
+Yet another email: emily.blunt@random.com
+Even more random text here.
+
+Will match 01213315000 but not 01212.
+However, . results in matching 0ABCDEFHIJ because . means any character. To match numbers or specific characters need some way to limit the characters at a position.
+
+Example 2
+
+How can we search for slight variations of the same word, for example specialized and specialised?
+Effectively the same word varying by s or z, e.g.
+specialize
+specialise
+We could do two separate searches, one for specialise and one for specialize.
+If we use. to give the expression speciali.e we can find the above words but will also match specialiie, a mis-spelling.
+We can look for variations by making use of a character class.
+Regular expressions are a specialized form of search and replace 
+R e g u l a r expressions are a specialised form of search and replace
+Regular expressions are a speciality of Stephen Kleene
+
+
+Example 3
+UK phone numbers can come in various formats, depending on the type of number and how it's presented. Here are some common formats:
+Landline Numbers:
+
+    020 7123 4567 (London)
+    0114 496 0123 (Sheffield)
+    0161 234 5678 (Manchester)
+
+Mobile Numbers:
+
+    07700 900123
+    07890 123456
+    07911 567890
+
+With Country Code:
+
+    +44 20 7123 4567
+    +44 7700 900123
+    +44 161 234 5678
+
+Without Spaces:
+
+    02071234567
+    07700900123
+    +447700900123
+
+With Hyphens:
+
+    020-7123-4567
+    07700-900123
+    +44-20-7123-4567
+
+Freephone Numbers:
+
+    0800 123 456
+    0808 234 567
+
+Premium Rate Numbers:
+
+    0901 234 567
+    0911 567 890
+
+Note: These are just example numbers and should not be used for actual communications.
