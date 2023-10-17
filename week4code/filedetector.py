@@ -20,15 +20,15 @@ def identify_file_type(filename):
     pdf_regex = re.compile(r'^25504446')
 
     # check if the file is a JPEG
-    if re.match(jpeg_regex, hex_data[0:8]):
+    if re.match(jpeg_regex, hex_data):
         print('This is a JPEG file.')
 
     # check if the file is a ZIP
-    elif re.match(zip_regex, hex_data[0:8]):
+    elif re.match(zip_regex, hex_data):
         print('This is a ZIP file.')
 
     # check if the file is a PDF
-    elif re.match(pdf_regex, hex_data[0:8]):
+    elif re.match(pdf_regex, hex_data):
         print('This is a PDF file.')
 
     else:
