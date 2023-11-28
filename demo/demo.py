@@ -3,6 +3,7 @@ import hashlib
 import os
 #1
 evidence_file = None
+file_system = None
 
 #2
 menu = ("Program Options Menu\n"
@@ -48,7 +49,7 @@ def open_evidence_file():
         input("Press enter to continue")
         return
     else:
-        evidence_file = pytsk3.Img_Info(evidence_file_name)
+        evidence_file = pytsk3.Img_Info(evidence_file_name) #the actual opening of the file happens here
         print("Evidence file opened successfully!!")
         
         print("#"*45)
@@ -68,9 +69,10 @@ def open_evidence_file():
         partition_table_type = partition_table.info.vstype
         if partition_table_type == pytsk3.TSK_VS_TYPE_DOS:
             print ("Partition table is MBR")
+        elif partition_table_type == pytsk3.TSK_VS_TYPE_GPT:
+            print ("Partition table is GPT")
         else:
-            print("Partition table is  GPT")
-        
+            print ("Unknown partition table type")
         print("#"*45)
         
         input("Press enter to continue")
@@ -78,9 +80,7 @@ def open_evidence_file():
 #5
 def list_partitions():
     global evidence_file
-
     partition_table = pytsk3.Volume_Info(evidence_file)
-
     print("List of Partitions \n\n")
     print('Partition number \tDesc\t Start Sector\t Number of Sectors')
     print('-' * 89)
@@ -90,15 +90,56 @@ def list_partitions():
         print(f"{partition_count:<20}{partition.desc.decode('ascii'):<24}{partition.start:<17}{partition.len:<16}")
         partition_count += 1
     print('\n\n')
+    input("Press enter to continue")
 
 def open_partition():
-    print("TODO")
+    global evidence_file, file_system
+ 
+    if evidence_file is None:
+        print("No evidence file is open. Please open an evidence file first.")
+        return
+ 
+    partition_table = pytsk3.Volume_Info(evidence_file)
+ 
+    try:
+        partition_num = int(input("Enter the partition number to open: "))
+        partition = list(partition_table)[partition_num - 1]
+    except (ValueError, IndexError):
+        print("Invalid partition number.")
+        return
+ 
+    offset = partition.start * 512  # Assuming sector size is 512 bytes
+    file_system = pytsk3.FS_Info(evidence_file, offset)
+    print(f"Partition {partition_num} opened.")
+        
+    input("Press enter to continue")
+
+def list_files_in_directory(dir_path):
+    global file_system
+ 
+    if file_system is None:
+        print("No partition is open. Please open a partition first.")
+        return
+ 
+    try:
+        directory = file_system.open_dir(path=dir_path)
+        print(f"Listing files in directory: {dir_path}")
+        for file in directory:
+            print(file.info.name.name.decode("utf-8"))
+    except IOError:
+        print("Could not open directory.")
+ 
 
 def list_files():
-    print("TODO")
+    directory_path = input("Enter the directory path to list files (default: root '/'): ")
+    if directory_path == "":
+        directory_path = "/"
+    list_files_in_directory(directory_path)
+    input("Press enter to continue")
 
 def display_file_details():
     print("TODO")
+    input("Press enter to continue")
 
 #6
 def run_main():
