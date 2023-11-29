@@ -114,21 +114,28 @@ def open_partition():
         
     input("Press enter to continue")
 
-def list_files_in_directory(dir_path):
+def list_files_in_directory(dir_path, depth=0, max_depth=3):
     global file_system
- 
+
     if file_system is None:
         print("No partition is open. Please open a partition first.")
         return
- 
+
+    if depth > max_depth:
+        return
+
     try:
         directory = file_system.open_dir(path=dir_path)
-        print(f"Listing files in directory: {dir_path}")
         for file in directory:
-            print(file.info.name.name.decode("utf-8"))
+            file_name = file.info.name.name.decode("utf-8")
+            full_path = os.path.join(dir_path, file_name)  # Full path of the file
+            print(full_path)
+
+            if file.info.name.type == pytsk3.TSK_FS_NAME_TYPE_DIR and file_name not in [".", ".."]:
+                list_files_in_directory(full_path, depth + 1, max_depth)
     except IOError:
         print("Could not open directory.")
- 
+
 
 def list_files():
     directory_path = input("Enter the directory path to list files (default: root '/'): ")
@@ -136,6 +143,7 @@ def list_files():
         directory_path = "/"
     list_files_in_directory(directory_path)
     input("Press enter to continue")
+
 
 def display_file_details():
     global file_system
