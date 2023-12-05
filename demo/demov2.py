@@ -134,7 +134,8 @@ def list_files_in_directory(dir_path, depth=0, max_depth=3):
             if file.info.name.type == pytsk3.TSK_FS_NAME_TYPE_DIR and file_name not in [".", ".."]:
                 list_files_in_directory(full_path, depth + 1, max_depth)
     except IOError:
-        print("Could not open directory.")
+        pass # Ignore errors we don't have permission to access or the directory is unreadable
+        # print("Could not open directory.")
 
 
 def list_files():
