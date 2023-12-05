@@ -34,7 +34,6 @@ def open_evidence_file():
 
 #prompt the user for the name of the evidence file to open
 #if user presses enter, use the default file name "diskimageMT.001"
-
     evidence_file_name = input("Please enter name of evidence file to open (default: diskimageMT.001)> ")  
     if evidence_file_name == "":
         evidence_file_name = "diskimageMT.001"
