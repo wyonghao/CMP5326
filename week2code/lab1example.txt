@@ -1,0 +1,27 @@
+Example 1
+
+This is some text to test how regular expressions work. But 74i5 isn't.
+john.doe@example.com is one email address.
+Here's another: jane.doe@example.net
+Type in the characters is into the “Regular Expression” area.
+sarah.connor@fake.org
+More random text.
+
+Yet another email: emily.blunt@random.com
+Even more random text here.
+
+Will match 01213315000 but not 01212.
+However, . results in matching 0ABCDEFHIJ because . means any character. To match numbers or specific characters need some way to limit the characters at a position.
+
+Example 2
+
+How can we search for slight variations of the same word, for example specialized and specialised?
+Effectively the same word varying by s or z, e.g.
+specialize
+specialise
+We could do two separate searches, one for specialise and one for specialize.
+If we use. to give the expression speciali.e we can find the above words but will also match specialiie, a mis-spelling.
+We can look for variations by making use of a character class.
+Regular expressions are a specialized form of search and replace 
+R e g u l a r expressions are a specialised form of search and replace
+Regular expressions are a speciality of Stephen Kleene
