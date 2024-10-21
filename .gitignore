@@ -8,3 +8,4 @@ winven/
 venv/
 .venv/
 demo/andriod.vmdk
+debug.log
