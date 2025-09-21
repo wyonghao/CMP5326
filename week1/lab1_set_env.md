@@ -226,5 +226,3 @@ python demov2.py
 1. Activate your virtual environment.
 2. Run `pip list` and display `pytsk3`.
 3. Execute the forensic program (`demov2.py`) and display the menu.
-
-
