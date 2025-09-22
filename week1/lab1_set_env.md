@@ -26,9 +26,27 @@ This lab will help you prepare your environment for digital forensic programming
 
 ### Step 1 – Check Environment in VS Code Terminal
 
-1. Open **VS Code**.
-2. Open the integrated terminal (`` Ctrl+` ``).
-3. Run these commands:
+If python is not recognized or shows the wrong version on Windows lab machines, run these PowerShell commands in the VS Code terminal (no admin needed), then proceed with the checks below.
+
+1) Use the installed Python immediately in this terminal:
+```powershell
+Set-Alias -Name python -Value "C:\Program Files\Python313\python.exe"; Set-Alias -Name python3 -Value "C:\Program Files\Python313\python.exe"; python --version
+```
+
+2) Make it take precedence in this terminal:
+```powershell
+$env:Path = "C:\Program Files\Python313;C:\Program Files\Python313\Scripts;" + $env:Path; Get-Command python; python --version
+```
+
+3) Make it permanent for your user (restart VS Code after running):
+```powershell
+[Environment]::SetEnvironmentVariable('Path', "C:\Program Files\Python313;C:\Program Files\Python313\Scripts;" + [Environment]::GetEnvironmentVariable('Path','User'), 'User')
+```
+
+4) Open App execution aliases and toggle off “App Installer python.exe” and “python3.exe”:
+```powershell
+Start-Process "ms-settings:apps-advanced-app-settings"
+```
 
    ```bash
    python --version
@@ -39,7 +57,18 @@ This lab will help you prepare your environment for digital forensic programming
    * `python` and `pip` must respond with a version.
    * `git` should also respond with a version (if not, Git is not available on this lab machine).
 
----
+   If pip is missing or broken on Windows lab machines, run these in the VS Code PowerShell terminal:
+
+   ```powershell
+   & "C:\Program Files\Python313\python.exe" -m pip --version
+   
+   # If pip is missing, install/repair it and upgrade pip
+   & "C:\Program Files\Python313\python.exe" -m ensurepip --upgrade; & "C:\Program Files\Python313\python.exe" -m pip install --upgrade pip
+   
+   # Then use the PATH steps above to prioritize Python 3.13 in this terminal and make it permanent if needed.
+
+   $env:Path = "C:\Program Files\Python313\;C:\Program Files\Python313\Scripts\;$env:Path"; [Environment]::SetEnvironmentVariable('Path',"C:\Program Files\Python313\;C:\Program Files\Python313\Scripts\;" + [Environment]::GetEnvironmentVariable('Path','User'),'User')
+   ```
 
 ### Step 2 – Create a Virtual Environment
 
