@@ -75,7 +75,35 @@ This lab will help you prepare your environment for digital forensic programming
 
 ---
 
-### Step 3 – Install Packages from Local Wheel File
+### Step 3 – Test Pip Functionality
+
+Before installing the complex `pytsk3` package, let's verify that pip works correctly in your virtual environment.
+
+1. Install a simple test package:
+
+   ```bash
+   pip install requests
+   ```
+
+2. Verify the installation:
+
+   ```bash
+   pip list
+   ```
+
+   You should see `requests` and its dependencies listed.
+
+3. Test that the package works:
+
+   ```bash
+   python -c "import requests; print('Pip and virtual environment working correctly!')"
+   ```
+
+   If this prints the success message, your pip and virtual environment are functioning properly.
+
+---
+
+### Step 4 – Install Packages from Local Wheel File
 
 Since lab machines cannot compile packages, use the wheel provided by IT staff.
 
@@ -103,15 +131,80 @@ Since lab machines cannot compile packages, use the wheel provided by IT staff.
 
 ---
 
-### Step 4 – Run the Forensic Program
+### Step 5 – Verify Pytsk3 Installation
 
-1. Place the provided file (`demov2.py`) into your lab folder.
-2. Run the program:
+Create a simple test script to verify that `pytsk3` is working correctly.
+
+1. Create a file called `test_pytsk3.py` with the following content:
+
+   ```python
+   #!/usr/bin/env python3
+   """
+   Simple test script to verify pytsk3 installation and basic functionality.
+   """
+   
+   import re
+   import sys
+   
+   def test_pytsk3_import():
+       """Test if pytsk3 can be imported successfully."""
+       try:
+           import pytsk3
+           print("✓ pytsk3 imported successfully")
+           print(f"  Version: {pytsk3.TSK_VERSION_STR}")
+           return True
+       except ImportError as e:
+           print(f"✗ Failed to import pytsk3: {e}")
+           return False
+   
+   def test_regex_functionality():
+       """Test basic regex functionality for forensic pattern matching."""
+       try:
+           # Test email pattern matching (common in forensics)
+           email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+           test_text = "Found emails: john.doe@example.com and admin@forensics.lab"
+           
+           emails = re.findall(email_pattern, test_text)
+           
+           if len(emails) == 2:
+               print("✓ Regex functionality working correctly")
+               print(f"  Found emails: {emails}")
+               return True
+           else:
+               print(f"✗ Regex test failed - expected 2 emails, found {len(emails)}")
+               return False
+       except Exception as e:
+           print(f"✗ Regex test failed: {e}")
+           return False
+   
+   def main():
+       """Run all tests."""
+       print("Testing Digital Forensics Environment Setup...")
+       print("=" * 50)
+       
+       pytsk3_ok = test_pytsk3_import()
+       regex_ok = test_regex_functionality()
+       
+       print("=" * 50)
+       
+       if pytsk3_ok and regex_ok:
+           print("🎉 All tests passed! Your environment is ready for digital forensics work.")
+           return 0
+       else:
+           print("❌ Some tests failed. Please check your installation.")
+           return 1
+   
+   if __name__ == "__main__":
+       sys.exit(main())
+   ```
+
+2. Run the test script:
 
    ```bash
-   python demov2.py
+   python test_pytsk3.py
    ```
-3. The program should display a **menu of forensic options**.
+
+   You should see output indicating that both pytsk3 and regex functionality are working correctly.
 
 ---
 
@@ -162,7 +255,19 @@ source venv/bin/activate     # macOS/Linux
 
 ---
 
-### Step 3 – Install Packages
+### Step 3 – Test Pip Functionality
+
+Before installing the complex `pytsk3` package, verify that pip works correctly.
+
+```bash
+pip install requests
+pip list
+python -c "import requests; print('Pip and virtual environment working correctly!')"
+```
+
+---
+
+### Step 4 – Install Packages
 
 You have **two options**:
 
@@ -194,13 +299,18 @@ pip list
 
 ---
 
-### Step 4 – Run the Forensic Program
+### Step 5 – Verify Pytsk3 Installation
 
-Run as before:
+Create and run the same test script as described in Section A:
 
-```bash
-python demov2.py
-```
+1. Create `test_pytsk3.py` (see Section A, Step 5 for the complete code).
+2. Run the verification:
+
+   ```bash
+   python test_pytsk3.py
+   ```
+
+   You should see output indicating that both pytsk3 and regex functionality are working correctly.
 
 ---
 
@@ -210,9 +320,10 @@ python demov2.py
 [ ] Open VS Code and terminal.  
 [ ] Confirm `python`, `pip`, and `git` are installed.  
 [ ] Create and activate a virtual environment.  
+[ ] Test pip functionality by installing `requests` package.  
 [ ] Install `pytsk3` (from **wheel file** or from **PyPI**, depending on setup).  
-[ ] Run `pip list` and confirm `pytsk3` is installed.  
-[ ] Run `python demov2.py` and confirm the forensic program menu appears.  
+[ ] Run `pip list` and confirm both `requests` and `pytsk3` are installed.  
+[ ] Create and run `test_pytsk3.py` to verify pytsk3 and regex functionality.  
 
 ### Additional for Personal Laptops
 
@@ -224,5 +335,5 @@ python demov2.py
 **Deliverable for Lab 1**: Show your instructor that you can:
 
 1. Activate your virtual environment.
-2. Run `pip list` and display `pytsk3`.
-3. Execute the forensic program (`demov2.py`) and display the menu.
+2. Run `pip list` and display both `requests` and `pytsk3`.
+3. Execute `test_pytsk3.py` and show successful verification output.
