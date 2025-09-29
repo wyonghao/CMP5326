@@ -46,7 +46,8 @@ email addresses from a given text file using regex.
 
 Example:
 ```python
-with open('lab1example.txt', 'r') as file:
+# Open and read the content of lab1example.txt
+with open('lab1example.txt', 'r', encoding='utf-8') as file:
     text = file.read()
 ```
 
