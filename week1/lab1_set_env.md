@@ -90,9 +90,9 @@ Start-Process "ms-settings:apps-advanced-app-settings"
      .\venv\Scripts\Activate
      ```
      If you encounter an execution policy error, run the following command to temporarily bypass it, then try activating again:
-     ```powershell
-     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-     ```
+   ```powershell
+      Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
+   ```  ```
 
    * **macOS/Linux**:
 
