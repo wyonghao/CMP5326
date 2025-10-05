@@ -1,0 +1,150 @@
+2025-09-15T12:20:00 host1 sshd[1234]: Failed password for unknown from 203.0.113.77 port 6560 ssh2
+2025-09-15T12:21:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T12:22:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T12:23:00 host1 sshd[1234]: Accepted password for unknown from 10.23.45.67 port 12196 ssh2
+2025-09-15T12:24:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T12:25:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T12:26:00 host1 sshd[1234]: Failed password for alice from 198.51.100.23 port 9459 ssh2
+2025-09-15T12:27:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T12:28:00 host1 sshd[1234]: Failed password for root from 172.16.0.5 port 27903 ssh2
+2025-09-15T12:29:00 host1 sshd[1234]: Accepted password for alice from 172.16.0.5 port 52289 ssh2
+2025-09-15T12:30:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T12:31:00 host1 sshd[1234]: Accepted password for carol from 203.0.113.77 port 36903 ssh2
+2025-09-15T12:32:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T12:33:00 host1 sshd[1234]: Failed password for root from 203.0.113.77 port 3228 ssh2
+2025-09-15T12:34:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T12:35:00 host1 sshd[1234]: Accepted password for bob from 10.23.45.67 port 23284 ssh2
+2025-09-15T12:36:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T12:37:00 host1 sshd[1234]: session closed for user root
+2025-09-15T12:38:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T12:39:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T12:40:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T12:41:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T12:42:00 host1 sshd[1234]: Failed password for alice from 172.16.0.5 port 41478 ssh2
+2025-09-15T12:43:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T12:44:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T12:45:00 host1 sshd[1234]: User alice not allowed because not in sudoers
+2025-09-15T12:46:00 host1 sshd[1234]: Failed password for bob from 198.51.100.23 port 5681 ssh2
+2025-09-15T12:47:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T12:48:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T12:49:00 host1 sshd[1234]: Failed password for unknown from 203.0.113.77 port 32324 ssh2
+2025-09-15T12:50:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T12:51:00 host1 sshd[1234]: Failed password for carol from 198.51.100.23 port 11886 ssh2
+2025-09-15T12:52:00 host1 sshd[1234]: Accepted password for bob from 172.16.0.5 port 4565 ssh2
+2025-09-15T12:53:00 host1 sshd[1234]: Accepted password for carol from 198.51.100.23 port 41964 ssh2
+2025-09-15T12:54:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T12:55:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T12:56:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T12:57:00 host1 sshd[1234]: Accepted password for unknown from 10.23.45.67 port 40190 ssh2
+2025-09-15T12:58:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T12:59:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T13:00:00 host1 sshd[1234]: User alice not allowed because not in sudoers
+2025-09-15T13:01:00 host1 sshd[1234]: Accepted password for root from 172.16.0.5 port 64335 ssh2
+2025-09-15T13:02:00 host1 sshd[1234]: Accepted password for bob from 172.16.0.5 port 11015 ssh2
+2025-09-15T13:03:00 host1 sshd[1234]: session closed for user root
+2025-09-15T13:04:00 host1 sshd[1234]: session closed for user unknown
+2025-09-15T13:05:00 host1 sshd[1234]: Accepted password for alice from 172.16.0.5 port 12633 ssh2
+2025-09-15T13:06:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T13:07:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T13:08:00 host1 sshd[1234]: session opened for user alice by (uid=0)
+2025-09-15T13:09:00 host1 sshd[1234]: session opened for user alice by (uid=0)
+2025-09-15T13:10:00 host1 sshd[1234]: Accepted password for bob from 198.51.100.23 port 29437 ssh2
+2025-09-15T13:11:00 host1 sshd[1234]: session opened for user alice by (uid=0)
+2025-09-15T13:12:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T13:13:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T13:14:00 host1 sshd[1234]: Accepted password for unknown from 203.0.113.77 port 8010 ssh2
+2025-09-15T13:15:00 host1 sshd[1234]: Failed password for carol from 192.168.1.42 port 62979 ssh2
+2025-09-15T13:16:00 host1 sshd[1234]: Failed password for carol from 198.51.100.23 port 26507 ssh2
+2025-09-15T13:17:00 host1 sshd[1234]: Failed password for bob from 172.16.0.5 port 3847 ssh2
+2025-09-15T13:18:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T13:19:00 host1 sshd[1234]: Failed password for alice from 203.0.113.77 port 31399 ssh2
+2025-09-15T13:20:00 host1 sshd[1234]: session closed for user root
+2025-09-15T13:21:00 host1 sshd[1234]: User unknown not allowed because not in sudoers
+2025-09-15T13:22:00 host1 sshd[1234]: session closed for user root
+2025-09-15T13:23:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T13:24:00 host1 sshd[1234]: Accepted password for root from 172.16.0.5 port 49090 ssh2
+2025-09-15T13:25:00 host1 sshd[1234]: Accepted password for bob from 198.51.100.23 port 25122 ssh2
+2025-09-15T13:26:00 host1 sshd[1234]: User unknown not allowed because not in sudoers
+2025-09-15T13:27:00 host1 sshd[1234]: session closed for user root
+2025-09-15T13:28:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T13:29:00 host1 sshd[1234]: Failed password for bob from 192.168.1.42 port 50976 ssh2
+2025-09-15T13:30:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T13:31:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T13:32:00 host1 sshd[1234]: Accepted password for alice from 203.0.113.77 port 43401 ssh2
+2025-09-15T13:33:00 host1 sshd[1234]: User alice not allowed because not in sudoers
+2025-09-15T13:34:00 host1 sshd[1234]: Failed password for alice from 10.23.45.67 port 53846 ssh2
+2025-09-15T13:35:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T13:36:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T13:37:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T13:38:00 host1 sshd[1234]: session opened for user carol by (uid=0)
+2025-09-15T13:39:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T13:40:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T13:41:00 host1 sshd[1234]: Failed password for unknown from 172.16.0.5 port 37748 ssh2
+2025-09-15T13:42:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T13:43:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T13:44:00 host1 sshd[1234]: Failed password for root from 192.168.1.42 port 42294 ssh2
+2025-09-15T13:45:00 host1 sshd[1234]: Accepted password for root from 198.51.100.23 port 54500 ssh2
+2025-09-15T13:46:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T13:47:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T13:48:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T13:49:00 host1 sshd[1234]: session opened for user alice by (uid=0)
+2025-09-15T13:50:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T13:51:00 host1 sshd[1234]: Accepted password for bob from 10.23.45.67 port 3698 ssh2
+2025-09-15T13:52:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T13:53:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T13:54:00 host1 sshd[1234]: Accepted password for alice from 10.23.45.67 port 31625 ssh2
+2025-09-15T13:55:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T13:56:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T13:57:00 host1 sshd[1234]: Accepted password for alice from 192.168.1.42 port 35341 ssh2
+2025-09-15T13:58:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T13:59:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T14:00:00 host1 sshd[1234]: User unknown not allowed because not in sudoers
+2025-09-15T14:01:00 host1 sshd[1234]: session opened for user carol by (uid=0)
+2025-09-15T14:02:00 host1 sshd[1234]: Failed password for unknown from 10.23.45.67 port 10213 ssh2
+2025-09-15T14:03:00 host1 sshd[1234]: Accepted password for carol from 198.51.100.23 port 24578 ssh2
+2025-09-15T14:04:00 host1 sshd[1234]: session closed for user unknown
+2025-09-15T14:05:00 host1 sshd[1234]: Accepted password for root from 172.16.0.5 port 21931 ssh2
+2025-09-15T14:06:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T14:07:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T14:08:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T14:09:00 host1 sshd[1234]: session closed for user root
+2025-09-15T14:10:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T14:11:00 host1 sshd[1234]: Failed password for bob from 198.51.100.23 port 4699 ssh2
+2025-09-15T14:12:00 host1 sshd[1234]: session closed for user unknown
+2025-09-15T14:13:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T14:14:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T14:15:00 host1 sshd[1234]: session opened for user bob by (uid=0)
+2025-09-15T14:16:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T14:17:00 host1 sshd[1234]: User alice not allowed because not in sudoers
+2025-09-15T14:18:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T14:19:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T14:20:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T14:21:00 host1 sshd[1234]: Accepted password for carol from 172.16.0.5 port 58708 ssh2
+2025-09-15T14:22:00 host1 sshd[1234]: Accepted password for bob from 192.168.1.42 port 14440 ssh2
+2025-09-15T14:23:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T14:24:00 host1 sshd[1234]: session opened for user carol by (uid=0)
+2025-09-15T14:25:00 host1 sshd[1234]: Failed password for alice from 172.16.0.5 port 40230 ssh2
+2025-09-15T14:26:00 host1 sshd[1234]: session closed for user bob
+2025-09-15T14:27:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T14:28:00 host1 sshd[1234]: Failed password for bob from 203.0.113.77 port 25982 ssh2
+2025-09-15T14:29:00 host1 sshd[1234]: User unknown not allowed because not in sudoers
+2025-09-15T14:30:00 host1 sshd[1234]: session closed for user root
+2025-09-15T14:31:00 host1 sshd[1234]: Accepted password for bob from 198.51.100.23 port 9786 ssh2
+2025-09-15T14:32:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T14:33:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T14:34:00 host1 sshd[1234]: User root not allowed because not in sudoers
+2025-09-15T14:35:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T14:36:00 host1 sshd[1234]: Accepted password for alice from 198.51.100.23 port 22875 ssh2
+2025-09-15T14:37:00 host1 sshd[1234]: User carol not allowed because not in sudoers
+2025-09-15T14:38:00 host1 sshd[1234]: session closed for user unknown
+2025-09-15T14:39:00 host1 sshd[1234]: User bob not allowed because not in sudoers
+2025-09-15T14:40:00 host1 sshd[1234]: Failed password for root from 203.0.113.77 port 40253 ssh2
+2025-09-15T14:41:00 host1 sshd[1234]: Accepted password for unknown from 198.51.100.23 port 39855 ssh2
+2025-09-15T14:42:00 host1 sshd[1234]: session closed for user root
+2025-09-15T14:43:00 host1 sshd[1234]: session closed for user carol
+2025-09-15T14:44:00 host1 sshd[1234]: session opened for user root by (uid=0)
+2025-09-15T14:45:00 host1 sshd[1234]: session closed for user alice
+2025-09-15T14:46:00 host1 sshd[1234]: Accepted password for unknown from 10.23.45.67 port 48253 ssh2
+2025-09-15T14:47:00 host1 sshd[1234]: session opened for user unknown by (uid=0)
+2025-09-15T14:48:00 host1 sshd[1234]: session closed for user unknown
+2025-09-15T14:49:00 host1 sshd[1234]: session opened for user bob by (uid=0)
