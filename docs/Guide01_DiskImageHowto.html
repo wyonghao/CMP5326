@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guide01_DiskImageHowto.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="guide-adding-new-files-to-a-disk-image-for-digital-forensics-study">Guide: Adding New Files to a Disk Image for Digital Forensics Study</h1>
+<h2 id="1-preparation">1. Preparation</h2>
+<ul>
+<li>
+<p>Set up a Linux virtual machine (VM). For example:</p>
+<ul>
+<li><strong>OS:</strong> Ubuntu 20.04.6 LTS</li>
+<li><strong>Codename:</strong> focal</li>
+<li><strong>Username:</strong> <code>devasc</code></li>
+<li><strong>Password:</strong> <code>Cisco123!</code></li>
+</ul>
+</li>
+<li>
+<p>Ensure VirtualBox Guest Additions are installed and updated:</p>
+<pre class="hljs"><code><div>sudo apt update
+sudo apt install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms -y
+</div></code></pre>
+</li>
+</ul>
+<h2 id="2-mount-shared-folder">2. Mount Shared Folder</h2>
+<ul>
+<li>
+<p>On the <strong>Windows host</strong>:</p>
+<ul>
+<li>Create a shared folder named <code>Downloads</code>.</li>
+<li>Enable <strong>Auto-mount</strong> and <strong>Make Permanent</strong>.</li>
+</ul>
+<p><img src="imgs/vmhostshare.png" alt="VirtualBox Shared Folder Settings"></p>
+</li>
+<li>
+<p>On the <strong>Linux guest</strong>:</p>
+<pre class="hljs"><code><div>mkdir ~/windown
+sudo mount -t vboxsf Downloads /home/devasc/windown/
+</div></code></pre>
+</li>
+<li>
+<p>Verify that the guest can access the host folder.</p>
+</li>
+</ul>
+<h3 id="note-on-auto-mount-behavior">Note on Auto-Mount Behavior</h3>
+<p>When VirtualBox auto-mounts shared folders, they often appear under:</p>
+<pre class="hljs"><code><div>/media/sf_&lt;SharedFolderName&gt;
+</div></code></pre>
+<p>Example: <code>/media/sf_Downloads</code></p>
+<p>To make this consistent:</p>
+<ul>
+<li>Create a symbolic link:<pre class="hljs"><code><div>ln -s /media/sf_Downloads ~/windown
+</div></code></pre>
+</li>
+<li>Or disable auto-mount in VirtualBox and manually mount using:<pre class="hljs"><code><div>sudo mount -t vboxsf Downloads /home/devasc/windown/
+</div></code></pre>
+</li>
+</ul>
+<h2 id="3-analyze-the-current-disk-image">3. Analyze the Current Disk Image</h2>
+<ul>
+<li>Navigate to your forensic image directory:<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ~/forensic_image_lab
+</div></code></pre>
+</li>
+<li>Install SleuthKit if not already installed:<pre class="hljs"><code><div>sudo apt install sleuthkit
+</div></code></pre>
+</li>
+<li>Use <code>mmls</code> to view partition layout:<pre class="hljs"><code><div>mmls diskimageMT.001
+</div></code></pre>
+</li>
+</ul>
+<p>Example output:</p>
+<pre class="hljs"><code><div>Slot    Start     End       Length     Description
+001:    0         62        63         Unallocated
+002:    63        224909    224847     NTFS / exFAT (0x07)
+003:    224910    240974    16065      FAT12 (0x01)
+004:    240975    250878    9904       Unallocated
+</div></code></pre>
+<h2 id="4-mount-the-ntfs-partition">4. Mount the NTFS Partition</h2>
+<ul>
+<li>Create a mount point:<pre class="hljs"><code><div>mkdir mnt_ntfs
+</div></code></pre>
+</li>
+<li>Calculate the offset:
+<code>Start sector × 512 bytes = 63 × 512 = 32256</code></li>
+<li>Mount the partition:<pre class="hljs"><code><div>sudo mount -o loop,offset=32256 diskimageMT.001 mnt_ntfs
+</div></code></pre>
+</li>
+<li>List files:<pre class="hljs"><code><div>ls mnt_ntfs/
+</div></code></pre>
+</li>
+</ul>
+<h2 id="5-add-new-files">5. Add New Files</h2>
+<ul>
+<li>Copy the desired files into <code>mnt_ntfs/</code> using <code>cp</code> or file manager.</li>
+</ul>
+<h2 id="6-unmount-and-save">6. Unmount and Save</h2>
+<ul>
+<li>Sync and unmount:<pre class="hljs"><code><div>sync
+sudo umount mnt_ntfs
+</div></code></pre>
+</li>
+<li>The disk image now includes the new files.</li>
+</ul>
+<hr>
+
+</body>
+</html>
